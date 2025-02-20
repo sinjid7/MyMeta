@@ -34,6 +34,10 @@ public class BaseController : MonoBehaviour
         HandleAction();
         Rotate(lookDirection);
     }
+    protected virtual void FixedUpdate()
+    {
+        Movement(movementDirection);
+    }
 
     protected virtual void HandleAction()
     {
