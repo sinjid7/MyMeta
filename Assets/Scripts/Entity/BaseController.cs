@@ -6,6 +6,7 @@ using UnityEngine.UIElements;
 public class BaseController : MonoBehaviour
 {
     protected Rigidbody2D _rigidbody2D;
+    protected AnimationHandler animationHandler;
 
     [SerializeField] private SpriteRenderer characterRenderer;
 
@@ -19,6 +20,7 @@ public class BaseController : MonoBehaviour
     protected virtual void Awake()
     {
         _rigidbody2D = GetComponent<Rigidbody2D>();
+        animationHandler = GetComponent<AnimationHandler>();
     }
     
     protected virtual void Start()
@@ -43,6 +45,7 @@ public class BaseController : MonoBehaviour
         direction = direction * 5;
 
         _rigidbody2D.velocity = direction;
+        animationHandler.Move(direction);
     }
 
     private void Rotate(Vector2 direction)

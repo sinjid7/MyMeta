@@ -15,7 +15,7 @@ public class PlayerController : BaseController
     protected override void HandleAction()
     {
         float horizontal = Input.GetAxisRaw("Horizontal");
-        float vertical = Input.GetAxisRaw("vertical");
+        float vertical = Input.GetAxisRaw("Vertical");
         movementDirection = new Vector2(horizontal, vertical).normalized;
 
         Vector2 mousePosition = Input.mousePosition;
